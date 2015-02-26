@@ -16,7 +16,7 @@ def search_query():
 #    query = '(mcdonalds OR Mcdonalds) AND (happy OR sad)' # Query for mcdonalds
 
     geo = ('40.76222', '-73.9844', '15mi') # Times Square (NYC)
-    query = 'apple'
+    query = 'apple OR Apple'
     
     
     MAX_ID = None
