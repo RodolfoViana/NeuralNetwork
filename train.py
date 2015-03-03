@@ -16,7 +16,7 @@ epochs = 300
 
 train = np.loadtxt( train_file, delimiter = ',' )
 validation = np.loadtxt( validation_file, delimiter = ',' )
-train = np.vstack(( train, validation ))
+train = np.vstack((train, validation))
 
 x_train = train[:,0:-1]
 y_train = train[:,-1]
