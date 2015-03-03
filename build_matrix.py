@@ -25,10 +25,10 @@ def build_matrix():
         for words in popular_words:
             if line.split("Text:")[1].lower().split().__contains__(words):
                 temp = temp + [line.split("Text:")[1].lower().split().count(words)]
-                file_out.write(str(line.split("Text:")[1].lower().split().count(words)) + ", ")
+                file_out.write(str(line.split("Text:")[1].lower().split().count(words)) +",")
             else:
                 temp = temp + [0]
-                file_out.write("0, ")
+                file_out.write("0" + ",")
 
 
         temp = temp + [line.split(",")[-1]]
