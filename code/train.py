@@ -5,12 +5,12 @@ from pybrain.datasets.supervised import SupervisedDataSet as SDS
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.supervised.trainers import BackpropTrainer
 
-train_file = 'data/train.csv'
-validation_file = 'data/validation.csv'
-output_model_file = 'model.pkl'
+train_file = '/home/rodolfo/Projetos/NeuralNetwork/data/train_groups.csv'
+validation_file = '/home/rodolfo/Projetos/NeuralNetwork/data/validation_groups.csv'
+output_model_file = 'model_groups.pkl'
 
-hidden_size = 50
-epochs = 300
+hidden_size = 5
+epochs = 17
 
 # load data
 

@@ -9,9 +9,9 @@ from math import sqrt
 from pybrain.datasets.supervised import SupervisedDataSet as SDS
 from sklearn.metrics import mean_squared_error as MSE
 
-test_file = 'data/test.csv'
-model_file = 'model.pkl'
-output_predictions_file = 'predictions.txt'
+test_file = '/home/rodolfo/Projetos/NeuralNetwork/data/test_groups.csv'
+model_file = 'model_groups.pkl'
+output_predictions_file = 'predictions_groups.txt'
 
 # load model
 

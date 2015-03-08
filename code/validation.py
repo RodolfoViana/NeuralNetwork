@@ -13,7 +13,7 @@ train_file = 'data/train.csv'
 validation_file = 'data/validation.csv'
 output_model_file = 'model_val.pkl'
 
-hidden_size = 100
+hidden_size = 10
 epochs = 1000
 continue_epochs = 10
 validation_proportion = 0.15
