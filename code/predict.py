@@ -24,6 +24,7 @@ x_test = test[:,0:-1]
 y_test = test[:,-1]
 y_test = y_test.reshape( -1, 1 )
 
+
 # you'll need labels. In case you don't have them...
 y_test_dummy = np.zeros( y_test.shape )
 
@@ -34,6 +35,8 @@ assert( net.indim == input_size )
 assert( net.outdim == target_size )
 
 # prepare dataset
+
+print y_test_dummy[0]
 
 ds = SDS( input_size, target_size )
 ds.setField( 'input', x_test )
