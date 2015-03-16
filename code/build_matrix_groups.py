@@ -29,17 +29,16 @@ def buildPopularList():
     popular_words = []
 
     popular_words_temp = []
-    count = 0
+    count = 1
     for line in file_words:
         if count < 5:
             popular_words_temp = popular_words_temp + [line.split("'")[1]]
             count += 1
         else:
+            popular_words_temp = popular_words_temp + [line.split("'")[1]]
             popular_words = popular_words + [popular_words_temp]
             count = 1
             popular_words_temp = []
-            popular_words_temp = popular_words_temp + [line.split("'")[1]]
-    popular_words = popular_words + [popular_words_temp]
 
 
     file_words.close()

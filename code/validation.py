@@ -9,13 +9,13 @@ from pybrain.datasets.supervised import SupervisedDataSet as SDS
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.supervised.trainers import BackpropTrainer
 
-train_file = 'data/train.csv'
-validation_file = 'data/validation.csv'
+train_file = '/home/rodolfo/Projetos/NeuralNetwork/data/train.csv'
+validation_file = '/home/rodolfo/Projetos/NeuralNetwork/data/train.csv'
 output_model_file = 'model_val.pkl'
 
-hidden_size = 10
+hidden_size = 20
 epochs = 1000
-continue_epochs = 10
+continue_epochs = 20
 validation_proportion = 0.15
 
 # load data, join train and validation files

@@ -5,18 +5,20 @@ from pybrain.datasets.supervised import SupervisedDataSet as SDS
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.supervised.trainers import BackpropTrainer
 
-train_file = '/home/rodolfo/Projetos/NeuralNetwork/data/train_groups.csv'
-validation_file = '/home/rodolfo/Projetos/NeuralNetwork/data/validation_groups.csv'
-output_model_file = 'model_groups.pkl'
+train_file = '/home/rodolfo/Projetos/NeuralNetwork/data/train.csv'
+validation_file = '/home/rodolfo/Projetos/NeuralNetwork/data/validation.csv'
+output_model_file = 'model.pkl'
 
 hidden_size = 5
-epochs = 17
+epochs = 300
 
 # load data
 
 train = np.loadtxt( train_file, delimiter = ',' )
 validation = np.loadtxt( validation_file, delimiter = ',' )
 train = np.vstack((train, validation))
+
+file_out = open("train.txt", "a+")
 
 x_train = train[:,0:-1]
 
@@ -34,15 +36,16 @@ ds.setField( 'target', y_train )
 
 # init and train
 
-net = buildNetwork( input_size, hidden_size, target_size, bias = True )
+net = buildNetwork( input_size, hidden_size, target_size, bias=True)
 trainer = BackpropTrainer( net,ds )
 
 print "training for {} epochs...".format( epochs )
 
 for i in range( epochs ):
-	mse = trainer.train()
-	rmse = sqrt( mse )
-	print "training RMSE, epoch {}: {}".format( i + 1, rmse )
+    mse = trainer.train()
+    rmse = sqrt( mse )
+    file_out.write(str(rmse)+"\n")
+    print "training RMSE, epoch {}: {}".format( i + 1, rmse )
 	
 pickle.dump( net, open( output_model_file, 'wb' ))
 

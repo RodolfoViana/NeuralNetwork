@@ -17,23 +17,14 @@ def build_matrix():
     for line in file_words:
         popular_words = popular_words + [line.split("'")[1]]
 
-    dict_matrix = {}
-    count = 0
     for line in file_in:
-        temp = []
 
         for words in popular_words:
             if line.split("Text:")[1].lower().split().__contains__(words):
-                temp = temp + [line.split("Text:")[1].lower().split().count(words)]
-                file_out.write(str(line.split("Text:")[1].lower().split().count(words)) +",")
+                file_out.write(str(line.split("Text:")[1].lower().split().count(words)) + ",")
             else:
-                temp = temp + [0]
                 file_out.write("0" + ",")
 
-
-        temp = temp + [line.split(",")[-1]]
-        dict_matrix[count] = temp
-        count += 1
         file_out.write(str(line.split(",")[-1]))
 
     file_in.close()

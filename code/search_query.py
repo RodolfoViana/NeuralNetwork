@@ -27,11 +27,11 @@ def search_query(set_Tweets):
     max_id = None
     tweets = []
     K = 18
+    x = 0
     for it in range(K):  # Retrieve up to K * 100 tweets
         temp_tweets = [json.loads(str(raw_tweet)) for raw_tweet \
                        in myApi.GetSearch(query, geo, count=100, max_id=max_id)] #result_type='recent')]
 
-        tweets = tweets + temp_tweets
         print('Tweets retrieved: %d' % len(tweets))
         if temp_tweets:
             max_id = temp_tweets[-1]['id']
@@ -42,6 +42,7 @@ def search_query(set_Tweets):
     count_new_tweets = 0
     unique_tweets = set_Tweets
     for raw_tweet in tweets:
+
         if unique_tweets.__contains__(str(raw_tweet['id'])):
             pass
         else:

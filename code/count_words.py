@@ -11,13 +11,13 @@ import operator
 
 # Count words
 def count_words():
-    file_in = open("tweet_label.txt", "r")
-    file_out = open("words_count.txt", "w")
+    file_in = open("/home/rodolfo/Projetos/NeuralNetwork/pre-processing/tweet_label.txt", "r")
+    file_out = open("/home/rodolfo/Projetos/NeuralNetwork/pre-processing/words_count_label.txt", "w")
 
     dict_words_num = {}
 
     for tweet in file_in:
-        for word in tweet.split("Text:")[1].split(" "):
+        for word in tweet.split("Text:")[1].lower().split(" "):
             if dict_words_num.has_key(word.lower()):
                 dict_words_num[word.lower()] += 1
             else:
