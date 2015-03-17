@@ -7,8 +7,8 @@ Created on Mon Mar 01 20:23:20 2015
 # This program build one matrix, with number of time that each tweet has some words (most popular words) and label
 
 def build_matrix():
-    file_in = open("tweet_label.txt", "r")
-    file_words = open("popular_words_w_frequency.txt", "r")
+    file_in = open("/home/rodolfo/Projetos/NeuralNetwork/pre-processing/tweet_label.txt", "r")
+    file_words = open("/home/rodolfo/Projetos/NeuralNetwork/pre-processing/popular_words_w_frequency.txt", "r")
 
     file_out = open("matrix_tweet.txt", "w")
 

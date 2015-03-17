@@ -127,7 +127,6 @@ def main():
 
             file_answer = open('predictions_file.txt', "r")
             answer = file_answer.readlines()[-1]
-            print answer
             if float(answer) > 0.5:
                 print "This tweet: ''%s''is not negative \n" % tweet
             else:
